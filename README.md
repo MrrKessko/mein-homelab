@@ -68,41 +68,40 @@ Alle primären Dienste laufen in **LXC 102 (docker-host)**, verwaltet über [Doc
 
 ### 🔒 Security & Passwörter
 
-| Container | Image | Port | Beschreibung |
-|---|---|---|---|
-| `vaultwarden` | `vaultwarden/server:latest` | `8088→80` | Self-hosted Bitwarden-kompatibler Passwortmanager |
+| Container | Image | Beschreibung |
+|---|---|---|
+| `vaultwarden` | `vaultwarden/server:latest` | Self-hosted Bitwarden-kompatibler Passwortmanager |
 
 ### 📊 Monitoring & Management
 
-| Container | Image | Port | Beschreibung |
-|---|---|---|---|
-| `uptime-kuma` | `louislam/uptime-kuma` | `3001→3001` | Service-Uptime-Monitoring |
-| `dozzle` | `amir20/dozzle:latest` | `3018→8080` | Echtzeit Docker Log Viewer |
-| `dockhand` | `fmys/dockhand:latest` | `2999→3000` | Leichtgewichtige Docker-Management-UI |
-| `portainer` | `portainer/portainer-ce:latest` | `9443→9443` | Vollständige Docker-Management-UI |
-| `netalertx` | `ghcr.io/jokob-sk/netalertx:latest` | — | Netzwerk-Geräte & Eindringlingsalarme |
-| `homepage` | `ghcr.io/gethomepage/homepage:latest` | `3000→3000` | Anpassbares Homelab-Dashboard |
+| Container | Image | Beschreibung |
+|---|---|---|
+| `uptime-kuma` | `louislam/uptime-kuma` | Service-Uptime-Monitoring |
+| `dozzle` | `amir20/dozzle:latest` | Echtzeit Docker Log Viewer |
+| `dockhand` | `fmys/dockhand:latest` | Leichtgewichtige Docker-Management-UI |
+| `portainer` | `portainer/portainer-ce:latest` | Vollständige Docker-Management-UI |
+| `netalertx` | `ghcr.io/jokob-sk/netalertx:latest` | Netzwerk-Geräte & Eindringlingsalarme |
+| `homepage` | `ghcr.io/gethomepage/homepage:latest` | Anpassbares Homelab-Dashboard |
 
 ### 🛠️ Tools & Utilities
 
-| Container | Image | Port | Beschreibung |
-|---|---|---|---|
-| `cyberchef` | `mpepping/cyberchef:latest` | `3014→8000` | Web-basiertes Daten-Analyse & Encoding-Tool |
-| `it-tools` | `corentinth/it-tools:latest` | `8080→80` | Sammlung nützlicher IT-Utilities |
-| `librespeed` | `lscr.io/linuxserver/librespeed:latest` | `3015→80` | Self-hosted Speedtest |
-| `n8n` | `n8nio/n8n` | `5678→5678` | Workflow-Automatisierungsplattform |
+| Container | Image | Beschreibung |
+|---|---|---|
+| `cyberchef` | `mpepping/cyberchef:latest` | Web-basiertes Daten-Analyse & Encoding-Tool |
+| `it-tools` | `corentinth/it-tools:latest` | Sammlung nützlicher IT-Utilities |
+| `librespeed` | `lscr.io/linuxserver/librespeed:latest` | Self-hosted Speedtest |
 
 ### 📡 Benachrichtigungen & Downloads
 
-| Container | Image | Port | Beschreibung |
-|---|---|---|---|
-| `ntfy` | `binwiederhier/ntfy:latest` | `3017→80` | Self-hosted Push-Notification-Service |
-| `download-notifier` | `alpine:latest` | — | Download-Abschluss-Benachrichtiger |
-| `server-1` | `ghcr.io/alexa69/metube:latest` | `3035→8081` | MeTube Download-Server Instanz 1 |
-| `server-2` | `ghcr.io/alexa69/metube:latest` | `3044→8081` | MeTube Download-Server Instanz 2 |
-| `server-3` | `ghcr.io/alexa69/metube:latest` | `3045→8081` | MeTube Download-Server Instanz 3 |
-| `server-4` | `ghcr.io/alexa69/metube:latest` | `3047→8081` | MeTube Download-Server Instanz 4 |
-| `server-auswahl` | `nginx:alpine` | `3046→80` | Nginx Reverse Proxy / Server-Selektor |
+| Container | Image | Beschreibung |
+|---|---|---|
+| `ntfy` | `binwiederhier/ntfy:latest` | Self-hosted Push-Notification-Service |
+| `download-notifier` | `alpine:latest` | Download-Abschluss-Benachrichtiger |
+| `server-1` | `ghcr.io/alexa69/metube:latest` | MeTube Download-Server Instanz 1 |
+| `server-2` | `ghcr.io/alexa69/metube:latest` | MeTube Download-Server Instanz 2 |
+| `server-3` | `ghcr.io/alexa69/metube:latest` | MeTube Download-Server Instanz 3 |
+| `server-4` | `ghcr.io/alexa69/metube:latest` | MeTube Download-Server Instanz 4 |
+| `server-auswahl` | `nginx:alpine` | Nginx Reverse Proxy / Server-Selektor |
 
 ---
 
@@ -115,7 +114,6 @@ Alle primären Dienste laufen in **LXC 102 (docker-host)**, verwaltet über [Doc
 | Externer Zugriff | Cloudflare Tunnel — keine offenen Inbound-Ports |
 | Uptime-Monitoring | Uptime Kuma |
 | Netzwerk-Überwachung | NetAlertX |
-| Docker-Subnetz | `172.x.x.x` (Bridge Mode) |
 
 ---
 
