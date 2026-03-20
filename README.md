@@ -41,11 +41,11 @@ graph TD
     Nextcloud --> Storage[(Local Storage)]
 ```
 
-🐳 Docker Services
+---
+
+### 🐳 Docker Services
 Aktuell laufen über Dockhand verwaltete Dienste wie:
 
-Security: Vaultwarden
-
-Tools: CyberChef, IT-Tools, Dozzle
-
-Media: MeTube Cluster, ntfy
+* **Security:** Vaultwarden
+* **Tools:** CyberChef, IT-Tools, Dozzle
+* **Media:** MeTube Cluster, ntfy
