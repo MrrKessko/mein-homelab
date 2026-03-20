@@ -128,12 +128,3 @@ Alle primären Dienste laufen in **LXC 102 (docker-host)**, verwaltet über [Doc
 | **GPU** | NVIDIA GeForce GTX 1060 |
 
 ---
-
-## 📁 Repo-Struktur
-
-
----
-
-<div align="center">
-  <sub>🏠 Hosted in Jülich, Germany · Zugang ausschließlich via Cloudflare Tunnel</sub>
-</div>
