@@ -2,7 +2,7 @@
 
 
 
-
+```
 graph TD
     %% Define Styles
     classDef hypervisor fill:#212529,stroke:#5c636a,stroke-width:2px,color:white;
@@ -55,3 +55,4 @@ graph TD
 
     %% Connectivity
     Cloudflared -.. External_Access(Remote Access Tunnels):::qemu
+```
