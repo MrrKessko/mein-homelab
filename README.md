@@ -136,13 +136,10 @@ Gesamt: **23 aktive Container** auf dem Host.
 
 ## 🐳 Docker Services (VM 103)
 
-Auf **VM 103 (docker-srv, 192.168.178.139)** laufen ergänzende Dienste:
+Auf **VM 103 (docker-srv, 192.168.178.139)** läuft lediglich ein ergänzender Dienst:
 
 | Container | Image | Beschreibung |
 |---|---|---|
-| iq-web-01 | nginx:alpine | IQ-System Web-Frontend |
-| iq-db-01 | mariadb:10 | IQ-System Datenbank |
-| iq-ssh | linuxserver/openssh-server | SSH-Gateway |
 | clawvin-tools | corentinth/it-tools:latest | IT-Utilities für den Hermes-Agenten |
 
 Auf dieser VM läuft außerdem der **Hermes AI Agent** (DeepSeek Flash / Claude), der als persönlicher Assistent, Systemadministrator und Entwickler fungiert.
@@ -193,7 +190,7 @@ Der BOSGAME E4 ist mit seinem 35W-Netzteil für den 24/7-Dauerbetrieb ausgelegt.
 ### 2026-05-28 — Erstfassung
 - **Neu:** Power-Messung (~12W, ~35€/Jahr), Netzwerk-Diagramm
 - **Neue Container:** sillytavern, paperless-ngx (+DB, +Redis), changedetection
-- **Entfernt:** uptime-kuma, portainer, homepage
+- **Entfernt:** uptime-kuma, portainer, homepage, InfraQuest (iq-* Container + Projektordner)
 - **Korrigiert:** RAM 16 GB, GPU RTX 2070 Super, Proxmox 9.2.2, Docker 29.4.3
 
-*Stand: Mai 2026*
+*Stand: Mai 2026 — aktuell.*
