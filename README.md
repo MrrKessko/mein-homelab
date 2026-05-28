@@ -186,6 +186,18 @@ Der BOSGAME E4 ist mit seinem 35W-Netzteil für den 24/7-Dauerbetrieb ausgelegt.
 
 ---
 
+## 📋 ToDo
+
+Geplante Weiterentwicklungen:
+
+- **Monitoring-Stack (Grafana + Prometheus)** — Metriken, Alerts, System-Dashboards für alle VMs/LXCs
+- **Backup-Konzept (Config-Ebene)** — docker-compose + Konfigs als Git-Repository, Versionierung statt VM-Backups
+- **CI/CD Pipeline (GitHub Actions)** — Automatisiertes Deployment: Push → Build → Ausrollen im Homelab
+- **Container-Orchestrierung** — Docker Swarm oder einzelne Kubernetes-Komponenten testen
+- **Log-Management** — Zentrales Logging mit Loki + strukturierte Suche
+
+---
+
 ## 📜 Changelog
 
 ### 2026-05-28 — Erstfassung
