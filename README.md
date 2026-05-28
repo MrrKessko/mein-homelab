@@ -42,43 +42,43 @@
 ## 🏗️ Proxmox — Übersicht
 
 ```
-192.168.178.94 ── Proxmox Host (BOSGAME E4)
+Proxmox Host (BOSGAME E4)
        │
-       ├── LXC 102  docker-host    (192.168.178.50)  ← Haupt-Docker
-       ├── LXC 104  pihole         (192.168.178.104) ← DNS/Adblock
-       ├── LXC 106  nextcloud      (192.168.178.106) ← Cloud
-       ├── LXC 107  cloudflared    (192.168.178.111) ← Tunnel
-       ├── VM 100   Home Assistant ← Smart Home
-       ├── VM 101   AMP-GameServer ← Games (gestoppt)
-       └── VM 103   docker-srv     (192.168.178.139) ← Hermes + Tools
+       ├── LXC 102  docker-host       ← Haupt-Docker (23 Container)
+       ├── LXC 104  pihole            ← DNS/Adblock
+       ├── LXC 106  nextcloud         ← Cloud
+       ├── LXC 107  cloudflared       ← Tunnel
+       ├── VM 100   Home Assistant    ← Smart Home
+       ├── VM 101   AMP-GameServer    ← Games (gestoppt)
+       └── VM 103   docker-srv        ← Hermes + Tools
 ```
 
 ---
 
 ## 📦 LXC Container
 
-| ID | Name | IP | Typ | Beschreibung |
-|---|---|---|---|---|
-| 102 | docker-host | 192.168.178.50 | LXC | Haupt-Docker-Host — alle containerisierten Dienste |
-| 104 | pihole | 192.168.178.104 | LXC | Netzwerkweiter Adblocker via DNS |
-| 106 | nextcloud | 192.168.178.106 | LXC | Self-hosted Cloud-Speicher & Datei-Sync |
-| 107 | cloudflared | 192.168.178.111 | LXC | Cloudflare Tunnel für sicheren externen Zugriff |
+| ID | Name | Typ | Beschreibung |
+|---|---|---|---|
+| 102 | docker-host | LXC | Haupt-Docker-Host — alle containerisierten Dienste |
+| 104 | pihole | LXC | Netzwerkweiter Adblocker via DNS |
+| 106 | nextcloud | LXC | Self-hosted Cloud-Speicher & Datei-Sync |
+| 107 | cloudflared | LXC | Cloudflare Tunnel für sicheren externen Zugriff |
 
 ---
 
 ## 🖱️ Virtuelle Maschinen
 
-| ID | Name | IP | RAM | Disk | Typ | Beschreibung |
-|---|---|---|---|---|---|---|
-| 100 | haos-16.3 | — | 4 GB | 32 GB | QEMU | Home Assistant OS — Smart Home Automation |
-| 101 | AMP-GameServer | — | 8 GB | 140 GB | QEMU | Game-Server-Verwaltung (derzeit gestoppt) |
-| 103 | docker-srv | 192.168.178.139 | 6 GB | 64 GB | QEMU | Hermes Agent + IQ-System + Tools |
+| ID | Name | RAM | Disk | Typ | Beschreibung |
+|---|---|---|---|---|---|
+| 100 | haos-16.3 | 4 GB | 32 GB | QEMU | Home Assistant OS — Smart Home Automation |
+| 101 | AMP-GameServer | 8 GB | 140 GB | QEMU | Game-Server-Verwaltung (derzeit gestoppt) |
+| 103 | docker-srv | 6 GB | 64 GB | QEMU | Hermes Agent + Tools |
 
 ---
 
 ## 🐳 Docker Services (LXC 102)
 
-Alle primären Dienste laufen auf **LXC 102 (docker-host, 192.168.178.50)**, verwaltet über [Dockhand](https://github.com/fmys/dockhand).
+Alle primären Dienste laufen auf **LXC 102 (docker-host)**, verwaltet über [Dockhand](https://github.com/fmys/dockhand).
 
 Gesamt: **23 aktive Container** auf dem Host.
 
@@ -136,7 +136,7 @@ Gesamt: **23 aktive Container** auf dem Host.
 
 ## 🐳 Docker Services (VM 103)
 
-Auf **VM 103 (docker-srv, 192.168.178.139)** läuft lediglich ein ergänzender Dienst:
+Auf **VM 103 (docker-srv)** läuft lediglich ein ergänzender Dienst:
 
 | Container | Image | Beschreibung |
 |---|---|---|
@@ -150,11 +150,12 @@ Auf dieser VM läuft außerdem der **Hermes AI Agent** (DeepSeek Flash / Claude)
 
 | Funktion | Lösung | Details |
 |---|---|---|
-| DNS & Adblocking | Pi-hole (LXC 104) | 192.168.178.104 |
+| DNS & Adblocking | Pi-hole (LXC 104) | Netzwerkweite DNS-Filterung |
 | Externer Zugriff | Cloudflare Tunnel | LXC 107 — keine offenen Inbound-Ports |
 | Netzwerk-Überwachung | NetAlertX | Docker-Container auf LXC 102 |
 | Monitoring | Hermes Cron + NTFY | Tägliche Reports + Push-Benachrichtigungen |
-| Remote-Zugriff | iq-ssh (VM 103) | OpenSSH-Server |
+
+Das gesamte Homelab befindet sich in einem privaten Heimnetz (192.168.x.x). Der einzige Weg von außen rein ist der Cloudflare Tunnel — keine offenen Ports.
 
 ---
 
