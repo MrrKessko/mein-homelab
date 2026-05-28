@@ -196,4 +196,4 @@ Der BOSGAME E4 ist mit seinem 35W-Netzteil für den 24/7-Dauerbetrieb ausgelegt.
 - **Entfernt:** uptime-kuma, portainer, homepage
 - **Korrigiert:** RAM 16 GB, GPU RTX 2070 Super, Proxmox 9.2.2, Docker 29.4.3
 
-*Stand: Mai 2026 — aktuell.*
+*Stand: Mai 2026*
