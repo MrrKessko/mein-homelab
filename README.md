@@ -1,4 +1,4 @@
-[mein-homelab_updated.md](https://github.com/user-attachments/files/28360532/mein-homelab_updated.md)
+
 # 🔧 mein-homelab
 
 > Persönliche Homelab-Infrastruktur auf Basis von **Proxmox VE 9.2.2** — modular, containerisiert und selbst gehostet.
