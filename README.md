@@ -80,7 +80,7 @@ Proxmox Host (BOSGAME E2 Neo)
 
 Alle primären Dienste laufen auf **LXC 102 (docker-host)**, verwaltet über [Dockhand](https://github.com/fmys/dockhand).
 
-Gesamt: **23 aktive Container** auf dem Host.
+Gesamt: **28 aktive Container** auf dem Host.
 
 ### 🔒 Security & Passwörter
 
@@ -126,6 +126,16 @@ Gesamt: **23 aktive Container** auf dem Host.
 | paperless-db | postgres:16 | PostgreSQL für Paperless-ngx |
 | paperless-redis | redis:7 | Redis-Cache für Paperless-ngx |
 
+### 📈 Monitoring
+
+| Container | Image | Beschreibung |
+|---|---|---|
+| prometheus | prom/prometheus:latest | Metrik-Sammlung & Alerting |
+| loki | grafana/loki:latest | Log-Aggregation |
+| promtail | grafana/promtail:latest | Log-Collector für Docker |
+| grafana | grafana/grafana:latest | Dashboards & Visualisierung |
+| cadvisor | gcr.io/cadvisor/cadvisor:latest | Docker-Container-Metriken
+
 ### ❌ Entfernt (seit letztem Update)
 
 - ~~uptime-kuma~~ — durch andere Lösungen abgelöst
@@ -153,7 +163,7 @@ Auf dieser VM läuft außerdem der **Hermes AI Agent** (DeepSeek Flash / Claude)
 | DNS & Adblocking | Pi-hole (LXC 104) | Netzwerkweite DNS-Filterung |
 | Externer Zugriff | Cloudflare Tunnel | LXC 107 — keine offenen Inbound-Ports |
 | Netzwerk-Überwachung | NetAlertX | Docker-Container auf LXC 102 |
-| Monitoring | Hermes Cron + NTFY | Tägliche Reports + Push-Benachrichtigungen |
+| Monitoring | Grafana + Prometheus (LXC 102), Hermes Cron + NTFY | Dashboards, Metriken, Logs + Push-Benachrichtigungen |
 
 Das gesamte Homelab befindet sich in einem privaten Heimnetz (192.168.x.x). Der einzige Weg von außen rein ist der Cloudflare Tunnel — keine offenen Ports.
 
@@ -190,15 +200,18 @@ Der BOSGAME E2 Neo ist mit seinem 35W-Netzteil für den 24/7-Dauerbetrieb ausgel
 
 Geplante Weiterentwicklungen:
 
-- **Monitoring-Stack (Grafana + Prometheus)** — Metriken, Alerts, System-Dashboards für alle VMs/LXCs
 - **Backup-Konzept (Config-Ebene)** — docker-compose + Konfigs als Git-Repository, Versionierung statt VM-Backups
 - **CI/CD Pipeline (GitHub Actions)** — Automatisiertes Deployment: Push → Build → Ausrollen im Homelab
 - **Container-Orchestrierung** — Docker Swarm oder einzelne Kubernetes-Komponenten testen
-- **Log-Management** — Zentrales Logging mit Loki + strukturierte Suche
 
 ---
 
 ## 📜 Changelog
+
+### 2026-05-29 — Monitoring-Stack live
+- **Neu:** Grafana + Prometheus + Loki + Promtail + cAdvisor als Docker-Stack auf LXC 102
+- **Neu:** Monitoring-Sektion in der Dienstübersicht
+- **Erledigt:** Monitoring-Punkt aus ToDo entfernt, Log-Management durch Loki abgedeckt
 
 ### 2026-05-28 — Erstfassung
 - **Neu:** Power-Messung (~12W, ~35€/Jahr), Netzwerk-Diagramm
