@@ -4,7 +4,7 @@
 
 ![Proxmox](https://img.shields.io/badge/Proxmox-VE%209.2.2-E57000?style=for-the-badge&logo=proxmox&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-29.4.3-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-AMD%20Ryzen%205%203550H-ED1C24?style=for-the-badge&logo=amd&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-AMD%20Ryzen%205%203500U-ED1C24?style=for-the-badge&logo=amd&logoColor=white)
 ![Power](https://img.shields.io/badge/Strom-~12W-2EA043?style=for-the-badge&logo=power&logoColor=white)
 
 ---
@@ -25,12 +25,12 @@
 
 ## 🖥️ Hardware
 
-### Proxmox-Server — BOSGAME E4
+### Proxmox-Server — BOSGAME E2 Neo
 
 | Komponente | Details |
 |---|---|
-| **Modell** | BOSGAME E4 Mini-PC |
-| **CPU** | AMD Ryzen 5 3550H · 4 Kerne · 3,7 GHz |
+| **Modell** | BOSGAME E2 Neo Mini-PC |
+| **CPU** | AMD Ryzen 5 3500U · 4 Kerne · 3,7 GHz |
 | **RAM** | 16 GB DDR4 @ 2400 MHz |
 | **Storage** | 512 GB PCIe NVMe SSD |
 | **GPU** | AMD Radeon Vega 8 (integriert) |
@@ -42,7 +42,7 @@
 ## 🏗️ Proxmox — Übersicht
 
 ```
-Proxmox Host (BOSGAME E4)
+Proxmox Host (BOSGAME E2 Neo)
        │
        ├── LXC 102  docker-host       ← Haupt-Docker (23 Container)
        ├── LXC 104  pihole            ← DNS/Adblock
@@ -170,7 +170,7 @@ Gemessen am 28. Mai 2026 via `powerstat -R` auf dem Proxmox-Host:
 | **Jahresverbrauch** | ~100–120 kWh |
 | **Kosten (bei ~30 ct/kWh)** | ~30–40 € pro Jahr |
 
-Der BOSGAME E4 ist mit seinem 35W-Netzteil für den 24/7-Dauerbetrieb ausgelegt.
+Der BOSGAME E2 Neo ist mit seinem 35W-Netzteil für den 24/7-Dauerbetrieb ausgelegt.
 
 ---
 
